@@ -13,7 +13,7 @@ def move(x,y):
         y += 1
     elif x == 'W':
         y -= 1
-    return float(y,1)
+    return round(y,2)
     
 
 while current_tile != 3.1:
