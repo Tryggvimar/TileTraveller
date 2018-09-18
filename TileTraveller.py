@@ -1,5 +1,9 @@
 # https://github.com/Tryggvimar/TileTraveller
 
+# 1. Seinna var léttara því föllin styttu kóðann og gerðu hann læsilegri
+# 2. Seinna er læsilegra því föllin skila alltaf því sama
+# 3. Seinna kom í veg fyrir harðkóðun á gildi staðsetningarinnar
+
 current_tile = 1.1
 s = 'You can travel: '
 
