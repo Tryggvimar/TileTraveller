@@ -30,7 +30,7 @@ while current_tile != 3.1:
             if direction == 'N':
                 current_tile = move(direction,current_tile)
             else:
-                def fail()
+                fail()
 
     if current_tile == 1.2:
         print(s + '(N)orth or (E)ast or (S)outh.')
