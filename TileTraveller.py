@@ -3,6 +3,19 @@
 current_tile = 1.1
 s = 'You can travel: '
 
+# fall sem breytir staðsetningu eftir direction
+def move(x,y):
+    if x == 'N':
+        y += 0.1
+    elif x == 'S':
+        y -= 0.1
+    elif x == 'E':
+        y += 1
+    elif x == 'W':
+        y -= 1
+    return float(y,1)
+    
+
 while current_tile != 3.1:
     if current_tile == 1.1:
         print(s + '(N)orth.')
@@ -10,7 +23,7 @@ while current_tile != 3.1:
         while direction != 'N':
             direction = str(input("Direction: ")).upper()
             if direction == 'N':
-                current_tile = 1.2
+                current_tile = move(direction,current_tile)
             else:
                 print('Not a valid direction!')
 
@@ -19,12 +32,8 @@ while current_tile != 3.1:
         direction = 'W'
         while direction != 'N' and direction != 'S' and direction != 'E':
             direction = str(input("Direction: ")).upper()
-            if direction == 'N':
-                current_tile = 1.3
-            elif direction == 'E':
-                current_tile = 2.2
-            elif direction == 'S':
-                current_tile = 1.1
+            if direction == 'N' or direction == 'S' or direction == 'E':
+                current_tile = move(direction,current_tile)
             else:
                 print('Not a valid direction!')
 
@@ -33,10 +42,8 @@ while current_tile != 3.1:
         direction = ''
         while direction != 'E' and direction != 'S':
             direction = str(input("Direction: ")).upper()
-            if direction == 'E':
-                current_tile = 2.3
-            elif direction == 'S':
-                current_tile = 1.2
+            if direction == 'E' or direction == 'S':
+                current_tile = move(direction,current_tile)    
             else:
                 print('Not a valid direction!')
 
@@ -46,7 +53,7 @@ while current_tile != 3.1:
         while direction != 'N':
             direction = str(input("Direction: ")).upper()
             if direction == 'N':
-                current_tile = 2.2
+                current_tile = move(direction,current_tile)
             else:
                 print('Not a valid direction!')
 
@@ -55,10 +62,8 @@ while current_tile != 3.1:
         direction = ''
         while direction != 'W' and direction != 'S':
             direction = str(input("Direction: ")).upper()
-            if direction == 'S':
-                current_tile = 2.1
-            elif direction == 'W':
-                current_tile = 1.2
+            if direction == 'S' or direction == 'W':
+                current_tile = move(direction,current_tile)
             else:
                 print('Not a valid direction!')
 
@@ -67,10 +72,8 @@ while current_tile != 3.1:
         direction = ''
         while direction != 'E' and direction != 'W':
             direction = str(input("Direction: ")).upper()
-            if direction == 'E':
-                current_tile = 3.3
-            elif direction == 'W':
-                current_tile = 1.3
+            if direction == 'E' or direction == 'W':
+                current_tile = move(direction,current_tile)
             else:
                 print('Not a valid direction!')
 
@@ -79,11 +82,8 @@ while current_tile != 3.1:
         direction = ''
         while direction != 'N' and direction != 'S':
             direction = str(input("Direction: ")).upper()
-            if direction == 'N':
-                current_tile = 3.3
-            elif direction == 'S':
-                current_tile = 3.1
-                print('Victory!')
+            if direction == 'N' or direction == 'S':
+                current_tile = move(direction,current_tile)
             else:
                 print('Not a valid direction!')
     
@@ -92,9 +92,8 @@ while current_tile != 3.1:
         direction = ''
         while direction != 'S' and direction != 'W':
             direction = str(input("Direction: ")).upper()
-            if direction == 'S':
-                current_tile = 3.2
-            elif direction == 'W':
-                current_tile = 2.3
+            if direction == 'S' or direction == 'W':
+                current_tile = move(direction,current_tile)
             else:
                 print('Not a valid direction!')
+print('Victory')
